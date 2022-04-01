@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="graphic"  ><img src="assets/img/login-employee.png" alt="" /></div>
+    <div class="right-wrapper">
+    <ul class="welcome">
+      <li class="welcome-item">
+        <a>
+          <img
+            class="welcome-item-logo"
+            src="assets/img/header-arrow.png"
+            alt="logo"
+          />
+        </a>
+      </li>
+      <li class="welcome-item">
+        <h2 class="welcome-item-text">Welcome back!</h2>
+      </li>
+      <li class="welcome-item">
+        <p class="welcome-item-paragraph">Please login to your account.</p>
+      </li>
+    </ul>
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">      
+      <input class="form-input" type="text" placeholder="Email Address*" formControlName="email"/>
+      <input class="form-input" type="password" placeholder="Password*" formControlName="password"/>
+      <div class="form-buttons">
+      <button class="form-buttons-submit" type="submit">Login</button>
+      <a class="form-buttons-link" [routerLink]="['/register']"  >SignUp</a>
+      </div>
+    </form>
+  </div>
+</div>

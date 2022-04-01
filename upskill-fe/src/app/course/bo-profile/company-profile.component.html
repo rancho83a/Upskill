@@ -1,0 +1,14 @@
+
+
+    <main class="row m-0 mb-4 pb-4">
+        <app-profile-aside></app-profile-aside>
+        <section class="col-8">
+            <div class="row g-4 m-0 p-0 mt-4 pt-4">
+                <div class="col-12 d-flex justify-content-end mb-4 pb-4">
+                    <button class="btn white-outline-btn" [routerLink]="['/catalog']">Manage</button>
+                </div>
+              
+                <app-course-item *ngFor="let course of businessOwnerCourses$ | async" [course]="course" class="col-12 col-lg-6"></app-course-item>
+            </div>
+        </section>
+    </main>

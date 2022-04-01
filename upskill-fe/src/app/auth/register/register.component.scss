@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+@import "../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap");
+
+.container {
+    @include flex(row, wrap, space-between, space-around);
+    .wrapper {
+        flex-grow: 1;
+        @include flex(column, wrap, center, center);
+    }
+}
+
+.form {
+    padding-top: 20px;
+    @include flex(row, wrap, center, center);
+    max-width: 600px;
+    min-height: 80px;
+    &-input {
+        margin-bottom: 45px;
+        flex-basis: 400px;
+        height: 50px;
+        border: 2px solid $button-blue;
+    }
+    &-buttons {
+        @include flex(row, nowrap, center, center);
+        flex-basis: 400px;
+
+        &-submit {
+            flex-basis: 170px;
+            padding: 10px 20px;
+            @include source-sans-pro(1.2em, normal);
+            text-align: center;
+            background: $button-blue;
+            color: white;
+            border-style: none;
+            height: 50px;
+        }
+        &-link {
+            border: 1px solid $button-blue;
+            flex-basis: 170px;
+            padding: 10px 20px;
+            @include source-sans-pro(1.2em, normal);
+            text-align: center;
+            color: $button-blue;
+            text-decoration: none;
+        }
+    }
+}

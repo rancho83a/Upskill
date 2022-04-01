@@ -1,0 +1,24 @@
+    <div class="custom-card">
+      <div class="custom-card-bg px-3">
+        <img [src]="course.imageUrl" alt="#" (click)="onDetailsDialog()">
+        <button class="btn edit-btn m-0 p-0" [routerLink]="['/course/edit', course.id]">
+          <img src="./assets/img/pencil.svg" alt="edit">
+        </button>
+      </div>
+      <div class="custom-card-details row g-0 m-0 p-4">
+        <div class="col">
+          <p class="coach-topic">{{course.name}}</p>
+          <p class="price">{{course.price}}€ per person</p>
+        </div>
+        <div class="col text-end">
+          <p>{{course.lector}}</p>
+          <img src="./assets/img/google.png" alt="Coach company" height="29">
+        </div>
+        <div class="col-12 mt-2 d-flex justify-content-center">
+          <button *ngIf="course.courseStatus == 'delete'" class="btn primary-btn" type="button" (click)="onDeleteCourse(course.id)">Delete</button>
+          <button *ngIf="course.courseStatus == 'remove'" class="btn primary-btn" type="button" (click)="onRemoveCourse(course.id)">Remove</button>
+          <button *ngIf="course.courseStatus == 'add'" class="btn primary-btn" type="button" (click)="onAddCourse(course.id)">Add</button>
+        </div>
+      </div>
+    </div>
+

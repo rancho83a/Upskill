@@ -1,0 +1,95 @@
+@import "../../../../styles.scss";
+@import "../../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap");
+
+
+.exit{
+    position: relative;
+   left:20px;
+   top:69px;
+   width: min-content;
+  
+    font-size: 45px;    
+     padding: 13px 13px;
+     padding-bottom: 19px;
+     border-radius: 100%;  
+     color: white;
+     background: $button-blue; 
+    
+}
+.container {
+    @include flex(column, wrap, flex-start, center);
+    width: 900px;
+    padding-bottom: 50px;  
+    margin-bottom: 57px;
+    background: white;
+
+    .top {
+        height: 200px;
+        width: 60%;
+        background: $button-blue;
+        padding-right: 50px;
+        margin-bottom: 50px;
+        @include flex(column, wrap, center, flex-end);
+        .upload {
+            color: white;
+            background: $button-blue;
+            border: 2px solid white;
+            width: 159px;
+            letter-spacing: 1px;
+            @include source-sans-pro(15px, 800);
+        }
+        .upload-input {
+            display: none;
+        }
+        .add {
+            align-self: center;
+            margin-top: 50px;
+            letter-spacing: 4px;
+            color: white;
+            @include source-sans-pro(25px, 900);
+        }
+    }
+
+    .form {
+        width: 100%;
+        @include flex(column, wrap, space-around, center);
+        #input-wrapper {           
+            width: 50%;
+            @include flex(row, wrap, center, center);
+            margin-bottom: 4px;
+        }
+        &-input {
+            height: 30px;
+            border: 1px solid $button-blue;
+            margin-right: 5px;
+        }
+        .remove-btn {
+            border: 2px solid $button-blue;
+            color: $button-blue;
+            width: 65px;
+            height: 30px;
+            padding-bottom: 5px;
+            background: white;
+        }
+        .add-button {
+            width: 260px;
+            border: none;
+            color: $button-blue;
+        }
+        .form-buttons {
+            @include flex(row, wrap, center, center);
+            width: 50%;        
+            &-cancel,
+            &-submit {
+                background: white;
+                width: 130px;
+                height: 30px;
+                margin-right: 5px;
+                color: $button-blue;
+                border: 1px solid $button-blue;
+                
+            }
+        }
+    }
+}

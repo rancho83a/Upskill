@@ -1,0 +1,94 @@
+
+<div class="container">
+  <div class="graphic"><img src="assets/img/bo-register.png" alt="" /></div>
+  <div class="wrapper">
+    <div class="logo">
+      <a>
+        <img class="logo-item" src="assets/img/header-arrow.png" alt="logo" />
+      </a>
+    </div>
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Full Name"
+        formControlName="fullName"
+      />
+      <div
+        class="red"
+        *ngIf="f.fullName.errors?.required && f.fullName.touched"
+      >
+        Field is required!
+      </div>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Company Name"
+        formControlName="companyName"
+      />
+      <div
+        class="red"
+        *ngIf="f.companyName.errors?.required && f.companyName.touched"
+      >
+        Field is required!
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="av.errors?.companyExist && f.companyName.touched"
+      >
+        Invalid Company!
+      </div>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Email Address*"
+        formControlName="email"
+      />
+      <div class="red" *ngIf="f.email.errors?.required && f.email.touched">
+        Field is required!
+      </div>
+      <div class="red" *ngIf="f.email.errors?.email && f.email?.touched">
+        Please, enter valid email!
+      </div>
+      <input
+        class="form-input"
+        type="password"
+        placeholder="Password*"
+        formControlName="password"
+      />
+      <div
+        class="red"
+        *ngIf="f.password.errors?.required && f.password.touched"
+      >
+        Field is required!
+      </div>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Confirm Password*"
+        formControlName="confirmPassword"
+      />
+      <div
+        class="red"
+        *ngIf="
+          f.confirmPassword.errors?.passwordMismatch &&
+          f.confirmPassword?.touched
+        "
+      >
+        Password not much!
+      </div>
+      <div class="form-buttons">
+        <button
+          class="form-buttons-submit"
+          type="submit"
+          [disabled]="!registerForm.valid"
+          [ngStyle]="{
+            cursor: !registerForm.valid ? 'not-allowed' : 'pointer'
+          }"
+        >
+          Sign up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

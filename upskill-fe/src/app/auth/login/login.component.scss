@@ -1,0 +1,70 @@
+@import "../../../styles.scss";
+@import "../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap");
+
+.container {
+    height: 100vh;
+    @include flex(column, wrap, space-between, flex-start);
+}
+
+.right-wrapper {
+    margin-top: 100px;
+    @include flex(column, wrap, center, center);
+}
+
+.welcome {
+    list-style: none;
+    @include flex(column, wrap, center, center);
+    &-item {
+        margin-bottom: 15px;
+        &-text {
+            @include source-sans-pro(2.5em, bolder);
+            letter-spacing: 2px;
+        }
+        &-paragraph {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.form {
+    @include flex(row, wrap, center, center);
+    max-width: 600px;
+    min-height: 80px;
+    &-input {
+        margin-bottom: 45px;
+        flex-basis: 400px;
+        height: 50px;
+        border: 1px solid $button-blue;
+    }
+    &-buttons {
+        @include flex(row, nowrap, space-between, center);
+        flex-basis: 400px;
+
+        &-submit {
+            flex-basis: 170px;
+            padding: 10px 20px;
+            @include source-sans-pro(1.2em, normal);
+            text-align: center;
+            background: $button-blue;
+            color: white;
+            border-style: none;
+        }
+        &-link {
+            border: 1px solid $button-blue;
+            flex-basis: 170px;
+            padding: 10px 20px;
+            @include source-sans-pro(1.2em, normal);
+            text-align: center;
+            color: $button-blue;
+            text-decoration: none;
+        }
+    }
+}
+
+::placeholder {
+    color: $button-blue;
+    font-size: 1.5em;
+}
+
+
