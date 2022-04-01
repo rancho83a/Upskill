@@ -1,0 +1,20 @@
+version: '3.3'
+services: 
+  centralized_service:
+    container_name: zookeeper
+    image: wurstmeister/zookeeper
+    ports:
+      - 2181:2181
+  message_broker:
+    container_name: kafka
+    image: wurstmeister/kafka
+    ports:
+      - 9092:9092
+    depends_on:
+      - centralized_service
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: centralized_service:2181
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ADVERTISED_PORT: 9092
+ 
+  
